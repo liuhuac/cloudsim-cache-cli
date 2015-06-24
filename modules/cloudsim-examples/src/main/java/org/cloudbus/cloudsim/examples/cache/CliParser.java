@@ -35,6 +35,10 @@ public class CliParser {
 														"set it to 3600 (sec) for 1 hour simulation");	
 		options.addOption( "M", "map", false, "output VM to PM mapping" );
 		options.addOption( "h", "help", false, "print usage" );
+		
+		options.addOption( "f", "cpu-mhz", true, "cpu frequency of each core default 3160" );
+		options.addOption( "u", "cpu-cores", true, "cpu number of cores default 4" );
+		options.addOption( "r", "mem-size", true, "total memory size (Mb) default 4096" );
 
 		try {
 		    // parse the command line arguments
@@ -78,6 +82,15 @@ public class CliParser {
 		    }
 		    if( line.hasOption( "M" ) ) {
 		    	ExpConstants.OUTPUT_MAP = true;
+		    }
+		    if( line.hasOption( "f" ) ) {
+		    	ExpConstants.HOST_MIPS[0] = Integer.valueOf(line.getOptionValue("f"));
+		    }
+		    if( line.hasOption( "u" ) ) {
+		    	ExpConstants.HOST_PES[0] = Integer.valueOf(line.getOptionValue("u"));
+		    }
+		    if( line.hasOption( "r" ) ) {
+		    	ExpConstants.HOST_RAM[0] = Integer.valueOf(line.getOptionValue("r"));
 		    }
 		    if( line.hasOption( "h" ) ) {
 		    	HelpFormatter formatter = new HelpFormatter();

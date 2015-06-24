@@ -95,11 +95,11 @@ public class ExpConstants {
 	 *   We increase the memory size to enable over-subscription (x4)
 	 */
 	public final static int HOST_TYPES	 = 1;
-	public final static int[] HOST_MIPS	 = { 3160 };
-	public final static int[] HOST_PES	 = { 4 };
-	public final static int[] HOST_RAM	 = { 4096 };
-	public final static int HOST_BW		 = 1000000; // 1 Gbit/s
-	public final static int HOST_STORAGE = 1000000; // 1 GB
+	public static int[] HOST_MIPS	 = { 3160 };// -f
+	public static int[] HOST_PES	 = { 4 };// -u
+	public static int[] HOST_RAM	 = { 4096 };// -r
+	public static int HOST_BW		 = 10000000; // 10 Gbit/s
+	public static int HOST_STORAGE = 1000000; // 1 GB
 
 	public final static PowerModel[] HOST_POWER = {
 		new PowerModelSpecPowerHpProLiantDL380G5Xeon5400()
