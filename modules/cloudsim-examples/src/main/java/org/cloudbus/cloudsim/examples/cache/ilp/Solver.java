@@ -62,11 +62,13 @@ public class Solver {
 				
 				// 2n_{t}c_{k}-n_{t}^2 \leq \sum_{i=1}^{n_t}\sum_{j=1}^{n_t}y_{ijk}
 				//solver.strAddConstraint(coeff, LpSolve.GE, 0);
-//System.out.println();
-System.out.print(coeff);	
-System.out.println("<="+upper);
-//System.out.println();
-//System.out.println();
+
+				//System.out.println();
+				//System.out.print(coeff);	
+				//System.out.println("<="+upper);
+				//System.out.println();
+				//System.out.println();
+				
 			//********end*********//
 			} 
 			
@@ -95,11 +97,13 @@ System.out.println("<="+upper);
 					
 					// 1 \leq \sum_{k=1}^{n_p}y_{ijk}
 					//solver.strAddConstraint(coeff, LpSolve.GE, 1);
-//System.out.println();
-//System.out.print("1<= ");
-System.out.print(coeff);				
-System.out.print("<=2");
-System.out.println();
+					
+					//System.out.println();
+					//System.out.print("1<= ");
+					//System.out.print(coeff);				
+					//System.out.print("<=2");
+					//System.out.println();
+					
 				//********end*********//
 				}
 			}
@@ -133,10 +137,11 @@ System.out.println();
 				}
 			}
 
-System.out.println(coeff);
-System.out.println();
+			//System.out.println(coeff);
+			//System.out.println();
+
 			solver.strSetObjFn(coeff);
-solver.setMinim();
+			solver.setMinim();
 
 
 			// solve the problem
