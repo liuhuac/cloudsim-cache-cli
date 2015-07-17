@@ -19,8 +19,8 @@ import org.cloudbus.cloudsim.power.models.PowerModelSpecPowerHpProLiantDL380G5Xe
  */
 public class ExpConstants {
 	
-	public static int NUMBER_OF_VMS = 8;
-	public static int NUMBER_OF_HOSTS = 4;
+	public static int NUMBER_OF_VMS = 10;
+	public static int NUMBER_OF_HOSTS = 5;
 	
 	// stack distance profile trace folder
 	public static String TRACE_FOLDER = "trace";
@@ -47,7 +47,7 @@ public class ExpConstants {
 	public final static boolean ENABLE_OUTPUT = true;
 	public final static boolean OUTPUT_CSV    = false;
 	
-	public static boolean OUTPUT_MAP    = false;
+	public static boolean OUTPUT_MAP    = true;
 
 	public final static double SCHEDULING_INTERVAL = 300;
 	public static double SIMULATION_LIMIT = 301;

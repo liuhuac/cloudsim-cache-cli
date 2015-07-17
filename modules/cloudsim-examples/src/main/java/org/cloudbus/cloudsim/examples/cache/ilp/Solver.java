@@ -29,9 +29,9 @@ public class Solver {
 			LpSolve solver = LpSolve.makeLp(0, ijk);
 	
 			// claim that y_{ijk} is binary
-//			for(int p=1; p<=ijk; p++){
-//				solver.setBinary(p, true);
-//			}
+			for(int p=1; p<=ijk; p++){
+				solver.setBinary(p, true);
+			}
 			
 			// index of y_{ijk} is (i+j*n_t+k*n_t*n_t)+1
 			// +1 because LpSolve index starts from 1
@@ -91,18 +91,34 @@ System.out.println("<="+upper);
 					 */
 					
 					// \sum_{k=1}^{n_p}y_{ijk} \leq 2
-					solver.strAddConstraint(coeff, LpSolve.LE, 2); 
+					solver.strAddConstraint(coeff, LpSolve.LE, 1); 
 					
 					// 1 \leq \sum_{k=1}^{n_p}y_{ijk}
-					solver.strAddConstraint(coeff, LpSolve.GE, 1);
+					//solver.strAddConstraint(coeff, LpSolve.GE, 1);
 //System.out.println();
-System.out.print("1<= ");
+//System.out.print("1<= ");
 System.out.print(coeff);				
 System.out.print("<=2");
 System.out.println();
 				//********end*********//
 				}
 			}
+			
+			
+			
+			coeff = "";
+			for(int kk=0; kk<ExpConstants.NUMBER_OF_HOSTS; kk++){
+				for(int jj=0; jj<ExpConstants.NUMBER_OF_VMS; jj++){	
+					for(int ii=0; ii<ExpConstants.NUMBER_OF_VMS; ii++){
+						coeff += "1 ";
+					}
+				}
+			}
+			int upper = (int)Math.ceil(ExpConstants.NUMBER_OF_VMS/ExpConstants.NUMBER_OF_HOSTS);
+			int lower = (int)Math.floor(ExpConstants.NUMBER_OF_VMS/ExpConstants.NUMBER_OF_HOSTS);
+			int r = ExpConstants.NUMBER_OF_VMS % ExpConstants.NUMBER_OF_HOSTS;
+			solver.strAddConstraint(coeff, LpSolve.GE, upper*upper*r+lower*lower*(ExpConstants.NUMBER_OF_HOSTS-r)); 
+			
 			
 			
 			/*
@@ -121,6 +137,7 @@ System.out.println(coeff);
 System.out.println();
 			solver.strSetObjFn(coeff);
 solver.setMinim();
+
 
 			// solve the problem
 			solver.solve();

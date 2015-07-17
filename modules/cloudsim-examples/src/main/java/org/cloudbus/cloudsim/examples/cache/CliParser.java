@@ -19,20 +19,20 @@ public class CliParser {
 		options.addOption( "m", "npms", true, "number of PMs" );
 		options.addOption( "t", "trace", true, "trace folder, require [-P] being set" );
 		options.addOption( "P", "trace-profile", false, "use tracefiles for simulation"
-														+ "default use random profiles");
+														+ " default use random profiles");
 		options.addOption( "H", "threshold", true, "overload threshold" +
-														"default 1");
+														" default 1");
 		options.addOption( "a", true, "coefficient a for random model" +
-														"default 200");
+														" default 200");
 		options.addOption( "b", true, "coefficient b1 for random model" +
-														"default 50" );
+														" default 50" );
 		options.addOption( "v", true, "coefficient b2 for random model" +
-														"default 50" );
+														" default 50" );
 		options.addOption( "c", true, "coefficient c for random model" +
 														"default 200");
 		options.addOption( "l", "limit", true, "length for simulation" +
-														"default 301 (sec) for initial placement experiment" +
-														"set it to 3600 (sec) for 1 hour simulation");	
+														" default 301 (sec) for initial placement experiment" +
+														" set it to 3600 (sec) for 1 hour simulation");	
 		options.addOption( "M", "map", false, "output VM to PM mapping" );
 		options.addOption( "h", "help", false, "print usage" );
 		
