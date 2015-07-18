@@ -29,8 +29,7 @@ public class SolverII {
 			for(int p=1; p<=ijk; p++){
 				solver.setBinary(p, true);
 			}
-			
-			
+
 			
 		}
 		catch (LpSolveException e) {
